@@ -12,8 +12,8 @@ def currentWeather():
     current_time = now.strftime("%H:%M:%S")
 
     city_name = request.form['city']
-
-    r = requests.get(f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid=d15352b0bff4d2c3b60fafed5288cc85')
+    url = 'http://api.openweathermap.org/data/2.5/weather?q=&appid=d15352b0bff4d2c3b60fafed5288cc85'.format(city_name)
+    r = requests.get(url)
     json_object = r.json()
     sky = json_object["weather"][0]["description"]
 
